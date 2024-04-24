@@ -1,0 +1,49 @@
+#templates>index.html
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="../static/style.css">
+    <title>MAVLink Data</title>
+    <style>
+        table, th, td {
+        border: 3px solid #c0c0c0;
+        border-collapse: collapse;
+        }
+        td {
+        text-align: center;
+        }
+      </style>
+</head>
+<body>
+    <center><h1><u>MAVLink Data</u></h1></center>
+    <table class="center", cellpadding="5">
+        <tr>
+            <th bgcolor="#2F4F4F"> A </th>
+            <th bgcolor="#2F4F4F"> B </th>
+            <th bgcolor="#2F4F4F"> C </th>
+            <th bgcolor="#2F4F4F"> D </th>
+            <th bgcolor="#2F4F4F"> E </th>
+            <th bgcolor="#2F4F4F"> F </th>
+            <th bgcolor="#2F4F4F"> G </th>
+            <th bgcolor="#2F4F4F"> H </th>
+        </tr>
+        {% if data %}
+            <tr>
+                <td WIDTH=100>  {{ data.A }}  </td>
+                <td WIDTH=100>  {{ data.B }}  </td>
+                <td WIDTH=100>  {{ data.C }}  </td>
+                <td WIDTH=100>  {{ data.D }}  </td>
+                <td WIDTH=100>  {{ data.E }}  </td>
+                <td WIDTH=200>  {{ data.F }}  </td>
+                <td WIDTH=200>  {{ data.G }}  </td>
+                <td WIDTH=200>  {{ data.H }}  </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">No data available</td>
+            </tr>
+        {% endif %}
+    </table>
+</body>
+</html>
